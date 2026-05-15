@@ -1,0 +1,22 @@
+{
+  "name": "kallpa-suite",
+  "version": "1.0.0",
+  "description": "Kallpa Marketing Strategy and Landing Page",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "nodemailer": "^6.9.13"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

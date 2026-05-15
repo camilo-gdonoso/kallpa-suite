@@ -1,0 +1,92 @@
+<%- include('../partials/header') %>
+
+<main>
+  <!-- Hero Section (Monday Style) -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">El motor de ejecución para tu <span>empresa</span></h1>
+      <p class="hero-desc">Descubre <strong>Kallpa Suite</strong>: El ecosistema de gestión diseñado para equipos que necesitan control total, infraestructura propia y escalabilidad sin límites.</p>
+      <div class="hero-actions">
+        <button class="btn-solid" onclick="scrollToSection('contacto')" style="padding: 16px 48px; font-size: 16px;">Solicitar Demo</button>
+        <p style="margin-top: 16px; font-size: 13px; color: var(--text-medium);">Infraestructura propia y soporte dedicado</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted By Section -->
+  <section class="trust-section">
+    <p class="trust-text">Potenciando empresas con tecnología de alto rendimiento</p>
+    <div class="logo-grid">
+      <i class="fas fa-industry"></i>
+      <i class="fas fa-shipping-fast"></i>
+      <i class="fas fa-hospital-user"></i>
+      <i class="fas fa-store"></i>
+      <i class="fas fa-hotel"></i>
+    </div>
+  </section>
+
+  <!-- Value Propositions -->
+  <section id="servicios" class="section">
+    <h2 class="section-title">Una plataforma <span>sin restricciones</span></h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon" style="background: #FFCB0020; color: #FFCB00;"><i class="fas fa-server"></i></div>
+        <h3>Entorno Dedicado</h3>
+        <p>Tu propio servidor, tu propia base de datos. Control total sobre tu información sin compartir nube con nadie.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background: #00CA7220; color: #00CA72;"><i class="fas fa-users-slash"></i></div>
+        <h3>Sin Costos por Usuario</h3>
+        <p>Añade a todo tu equipo sin preocuparte por la factura mensual. Escala sin el "impuesto por usuario" de los SaaS tradicionales.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background: #FF047620; color: #FF0476;"><i class="fas fa-cogs"></i></div>
+        <h3>Personalización Total</h3>
+        <p>Adaptamos la plataforma a tus procesos específicos, no al revés. Una suite que crece con tu modelo de negocio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Model Section -->
+  <section id="modelo" class="section" style="background: #F5F6F8;">
+    <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+      <h2 class="section-title">Tecnología <span>Sostenible</span></h2>
+      <p style="font-size: 20px; color: var(--text-medium); margin-bottom: 48px;">Olvídate de las suscripciones infinitas. Un modelo pensado para la rentabilidad de tu empresa.</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: left;">
+        <div style="background: white; padding: 40px; border-radius: 16px; border-top: 4px solid var(--primary);">
+          <h4 style="margin-bottom: 16px; font-size: 20px;">Infraestructura Anual</h4>
+          <p style="color: var(--text-medium);">Pago único anual por el arriendo de tus servidores dedicados de alto rendimiento. Estabilidad y seguridad garantizada.</p>
+        </div>
+        <div style="background: white; padding: 40px; border-radius: 16px; border-top: 4px solid #00CA72;">
+          <h4 style="margin-bottom: 16px; font-size: 20px;">Soporte y Evolución</h4>
+          <p style="color: var(--text-medium);">Cuota anual de soporte que incluye actualizaciones, resolución de incidencias y ajustes para que tu suite nunca quede obsoleta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Middle CTA Section -->
+  <section class="section" style="background: #181B34; color: white; text-align: center;">
+    <h2 style="font-size: 48px; margin-bottom: 24px;">Toma el control de tu operación</h2>
+    <p style="font-size: 18px; margin-bottom: 40px; opacity: 0.8;">Únete a las empresas que ya operan con eficiencia real y costos inteligentes.</p>
+    <button class="btn-solid" style="background: white; color: var(--primary); font-weight: 600;" onclick="scrollToSection('contacto')">Agendar una Consultoría</button>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section id="contacto" class="section">
+    <div class="contact-container">
+      <h2 class="section-title" style="margin-bottom: 16px;">Hablemos de tu <span>negocio</span></h2>
+      <p style="text-align: center; margin-bottom: 40px; color: var(--text-medium);">Completa el formulario y un consultor de Kallpa Suite te contactará.</p>
+      
+      <form action="/api/contacto" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre completo" class="form-input" required>
+        <input type="email" name="email" placeholder="Correo electrónico de trabajo" class="form-input" required>
+        <textarea name="mensaje" placeholder="Cuéntanos sobre tus objetivos" class="form-input" rows="4" style="height: auto;"></textarea>
+        <button type="submit" class="btn-solid" style="width: 100%; padding: 16px;">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

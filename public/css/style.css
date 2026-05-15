@@ -1,0 +1,196 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #6161FF; /* Monday Iris */
+  --primary-hover: #5151D5;
+  --text-dark: #323338;
+  --text-medium: #676879;
+  --bg-light: #ffffff;
+  --bg-grey: #F5F6F8;
+  --border-color: #C5C7D0;
+  --font-main: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+.nav {
+  background: #fff;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--bg-grey);
+}
+.nav-brand { 
+  font-size: 22px; 
+  font-weight: 700; 
+  color: var(--text-dark); 
+  letter-spacing: -1px; 
+  text-transform: lowercase;
+}
+.nav-brand span { color: var(--primary); }
+
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-link {
+  font-size: 14px; 
+  color: var(--text-medium);
+  font-weight: 500; 
+  cursor: pointer; 
+  transition: color 0.2s;
+}
+.nav-link:hover, .nav-link.active { color: var(--primary); }
+
+.btn-solid {
+  padding: 12px 24px;
+  background: var(--primary); 
+  border: none; 
+  border-radius: 32px; /* Pill shape like Monday */
+  font-size: 14px; 
+  color: white; 
+  cursor: pointer;
+  font-weight: 400; 
+  transition: all 0.2s;
+}
+.btn-solid:hover { background: var(--primary-hover); transform: scale(1.02); }
+
+.btn-outline {
+  padding: 12px 24px;
+  background: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 32px;
+  font-size: 14px;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-outline:hover { background: #F0F3FF; }
+
+/* ── HERO ── */
+.hero {
+  padding: 80px 32px;
+  text-align: center;
+  background: #fff;
+}
+.hero-title { 
+  font-size: 64px; 
+  font-weight: 600; 
+  line-height: 1.2; 
+  max-width: 900px; 
+  margin: 0 auto 24px; 
+  color: var(--text-dark);
+}
+.hero-title span { color: var(--primary); }
+.hero-desc { 
+  font-size: 18px; 
+  color: var(--text-medium); 
+  max-width: 700px; 
+  margin: 0 auto 40px; 
+}
+
+/* ── TRUST SECTION ── */
+.trust-section {
+  padding: 40px 32px;
+  text-align: center;
+  border-bottom: 1px solid var(--bg-grey);
+}
+.trust-text { font-size: 14px; color: var(--text-medium); margin-bottom: 32px; }
+.logo-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  opacity: 0.6;
+  flex-wrap: wrap;
+}
+.logo-grid i { font-size: 30px; }
+
+/* ── SECTIONS ── */
+.section { padding: 100px 32px; }
+.section-title { font-size: 42px; font-weight: 500; text-align: center; margin-bottom: 60px; }
+
+/* ── CARDS (Monday Style) ── */
+.grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 24px; 
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+.card {
+  background: #fff; 
+  border-radius: 8px; 
+  padding: 48px 32px;
+  border: 1px solid var(--bg-grey);
+  transition: all 0.3s;
+  text-align: center;
+}
+.card:hover { 
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
+  border-color: transparent;
+}
+.card-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 32px;
+}
+
+/* ── CONTACT FORM ── */
+.contact-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.form-input {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-family: inherit;
+}
+.form-input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* ── FOOTER ── */
+.footer { 
+  padding: 80px 32px; 
+  background: var(--bg-grey); 
+  color: var(--text-dark);
+}
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer h4 { font-size: 16px; font-weight: 600; margin-bottom: 24px; }
+.footer ul { list-style: none; }
+.footer li { margin-bottom: 12px; }
+.footer a { color: var(--text-medium); text-decoration: none; font-size: 14px; }
+.footer a:hover { color: var(--primary); }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .hero-title { font-size: 36px; }
+  .nav-links { display: none; }
+  .logo-grid { gap: 30px; }
+}

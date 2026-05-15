@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="mobile-hamburger" onclick="toggleMobileMenu()">
+    <div></div><div></div><div></div>
+  </div>
+  <div class="nav-logo" onclick="window.location='/'">
+    <div class="nav-brand">kallpa<span>suite</span></div>
+  </div>
+  <div class="nav-links">
+    <span class="nav-link <%= page === 'home' ? 'active' : '' %>" onclick="window.location='/'">Inicio</span>
+    <span class="nav-link" onclick="scrollToSection('servicios')">Plataforma</span>
+    <span class="nav-link" onclick="scrollToSection('modelo')">Modelo</span>
+    <span class="nav-link" onclick="scrollToSection('contacto')">Contacto</span>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-solid" onclick="scrollToSection('contacto')">Empezar ahora</button>
+  </div>
+</nav>
+
+<!-- Mobile Sidebar Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()">
+  <div class="mobile-menu-content" onclick="event.stopPropagation()">
+    <div class="mobile-menu-header">
+      <div class="nav-brand">Kallpa<span>Suite</span></div>
+      <div class="mobile-menu-close" onclick="toggleMobileMenu()">✕</div>
+    </div>
+    
+    <div class="mobile-menu-body">
+      <div class="mobile-menu-item" onclick="window.location='/'; toggleMobileMenu();">
+        <i class="fas fa-home"></i>
+        <span>Inicio</span>
+      </div>
+      <div class="mobile-menu-item" onclick="scrollToSection('servicios'); toggleMobileMenu();">
+        <i class="fas fa-th-large"></i>
+        <span>Servicios</span>
+      </div>
+      <div class="mobile-menu-item" onclick="scrollToSection('contacto'); toggleMobileMenu();">
+        <i class="fas fa-envelope"></i>
+        <span>Contacto</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const overlay = document.getElementById('mobileMenuOverlay');
+  overlay.classList.toggle('open');
+  document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : 'auto';
+}
+
+function scrollToSection(id) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+</script>
