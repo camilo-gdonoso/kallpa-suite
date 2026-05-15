@@ -210,14 +210,15 @@ body {
   height: 100%;
   background: rgba(0,0,0,0.5);
   z-index: 2000;
-  display: none;
+  display: none !important;
   opacity: 0;
   transition: opacity 0.3s;
 }
 .mobile-menu-overlay.open {
-  display: block;
+  display: block !important;
   opacity: 1;
 }
+
 
 .mobile-menu-content {
   position: absolute;
